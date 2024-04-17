@@ -26,28 +26,28 @@ while (1)
  int ETADO1 = (PTB-> PDIR &(1<<1));
  int ETADO2 = (PTB-> PDIR &(1<<2));
  int ETADO3 = (PTB-> PDIR &(1<<3));
- if(ETADO0==1 & ETADO1==0 & ETADO2==0 & ETADO3==0){
+ if((ETADO0==1) && (ETADO1==0) && (ETADO2==0) && (ETADO3==0)){
      for(i=0;i<8; i++){
         PORTA-> PSOR|= (1u<<pines0[i]);
         PORTA-> PSOR|= (0u<<pines2[i]);
         PORTA-> PSOR|= (0u<<pines4[i]);
         PORTA-> PSOR|= (0u<<pines6[i]);
     }
- else if(ETADO1==1 & ETADO0==0 & ETADO2==0 & ETADO3==0){
+ else if((ETADO1==1) && (ETADO0==0) && (ETADO2==0) && (ETADO3==0)){
    for(i=0;i<8; i++)
     PORTA-> PSOR|= (0u<<pines0[i]);
     PORTA-> PSOR|= (1u<<pines2[i]);
     PORTA-> PSOR|= (0u<<pines4[i]);
     PORTA-> PSOR|=(0u<<pines6[i]);
     } 
-    else if(ETADO2==1 & ETADO1==0 & ETADO0==0 & ETADO3==0){
+    else if((ETADO2==1) && (ETADO1==0) && (ETADO0==0) && (ETADO3==0)){
    for(i=0;i<8; i++)
     PORTA-> PSOR|= (0u<<pines0[i]);
     PORTA-> PSOR|= (0u<<pines2[i]);
     PORTA-> PSOR|= (1u<<pines4[i]);
     PORTA-> PSOR|=(0u<<pines6[i]);
     } 
-    else if(ETADO3==1 & ETADO1==0 & ETADO2==0 & ETADO0==0){
+    else if((ETADO3==1) && (ETADO1==0) && (ETADO2==0) && (ETADO0==0)){
    for(i=0;i<8; i++)
     PORTA-> PSOR|= (0u<<pines0[i]);
     PORTA-> PSOR|= (0u<<pines2[i]);
